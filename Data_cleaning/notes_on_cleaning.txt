@@ -1,0 +1,8 @@
+#remove na's from csv 
+Y<-na.omit(X)
+
+# to remove duplicate entires from csv file
+Z<-unique(Y)
+
+# remove all unrealistic values (eg if there is a sensible range or min/max vlaue 
+Q<-subset(Z, Z$column_name > 0)
