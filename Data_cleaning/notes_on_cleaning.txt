@@ -6,3 +6,7 @@ Z<-unique(Y)
 
 # remove all unrealistic values (eg if there is a sensible range or min/max vlaue 
 Q<-subset(Z, Z$column_name > 0)
+
+
+
+#For more read this...https://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf
