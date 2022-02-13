@@ -14,48 +14,6 @@ WT<-rowMeans(CSV_0[,c(2,3,4,5,6)])
 Two_mgL<-rowMeans(CSV_2[,c(2,3,4,5,6)])
 twenty_mgL<-rowMeans(CSV_20[,c(2,3,4,5,6)])
 
-# Data check if Normal distributed #
-#http://data.library.virginia.edu/understanding-q-q-plots/
-par(mfrow = c(2, 3)) # arranges plots
-qqnorm(WT)
-hist(WT)
-qqnorm(Two_mgL)
-hist(Two_mgL)
-qqnorm(twenty_mgL)
-hist(twenty_mgL)
-
-#if normally dist. should be straight line in qqnorm plot
-# and should show bell curve like shape in histogram #
-# If not : Data  needs to be transformed #
-
-# Data transformation #
-# r function to transform data #
-
-Math.cbrt <- function(y) {
-  sign(y) * abs(y)^(1/3)
-}
-
-different_transforms<- function(x) {
-  a<-log(x)
-  b<-log10(x)
-  c<-exp(x)
-  d<-abs(x)
-  e<-sin(x)
-  f<-Math.cbrt(x)
-  par(mfrow = c(2, 3))
-  hist(a, main="log")
-  hist(b, main="log10")
-  hist(c, main="exp")
-  hist(d, main="abs")
-  hist(e, main="sine")
-  hist(f, main="cube root")
-}
-
-# transform data and view
-different_transforms(WT)
-different_transforms(Two_mgL)
-different_transforms(twenty_mgL)
-
 # plot all initial data to compare row averages #
 
 # First transform data FORMAT for ggplot 
